@@ -7,10 +7,20 @@
 <title>Insert title here</title>
 </head>
 <body>
-<jsp:include page="header.html">
+<jsp:include page="header.html"/>
+<ol>
+<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+<li>Praesent nec libero dictum, consectetur diam nec, ornare ligula.</li>
+<li>Sed pretium eros vel eros pulvinar molestie.</li>
+<li>Pellentesque molestie ipsum in semper rutrum.</li>
 
 
 
-<jsp:include page="footer.jsp">  
+
+
+</ol>
+
+
+<jsp:include page="footer.jsp"/>  
 </body>
 </html>
