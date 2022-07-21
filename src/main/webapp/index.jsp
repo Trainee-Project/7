@@ -9,6 +9,9 @@
 <body>
 <jsp:include page="header.html"/>
 <ol>
+
+ <img src ="Image/logo.png" />
+
 <li>Planner</li>
 <li>Projects</li>
 <li>Database</li>
