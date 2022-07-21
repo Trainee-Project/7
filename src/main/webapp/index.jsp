@@ -7,21 +7,15 @@
 <title>The 7 Project</title>
 </head>
 <body>
+ <img src ="WebContent/Image/logo.25.png" />
 <jsp:include page="header.html"/>
+
+
 <ol>
-
- <img src ="Image/logo.png" />
-
 <li>Planner</li>
 <li>Projects</li>
 <li>Database</li>
 <li>Roles</li>
-
-
-
-
-
-
 </ol>
 
 
