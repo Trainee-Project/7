@@ -39,6 +39,6 @@
 >>>>>>> branch 'main' of https://github.com/Trainee-Project/7.git
 
 	<img src="WebContent/Image/logo.25.png" />
-	<jsp:include page="footer.jsp" />
+	<jsp:include page="footer.html" />
 </body>
 </html>
