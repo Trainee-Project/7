@@ -7,8 +7,9 @@
 </head>
 <body>
 
- <img src ="WebContent/Image/logo.25.png" />
 <jsp:include page="header.html"/>
+
+ <img src ="WebContent/Image/logo.25.png" />
 
 	<ol>
 		<li>Planner</li>
