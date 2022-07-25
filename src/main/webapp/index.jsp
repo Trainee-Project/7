@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>The 7 Project - Index</title>
+<title>The7 - Index</title>
 </head>
 <body>
 
@@ -16,8 +16,56 @@
 		<li>Projects</li>
 		<li>Database</li>
 		<li>Roles</li>
-	</ol>
+		
+		<li>DEAD SPACE</li>
+		<li>DEAD SPACE</li>
+		<li>DEAD SPACE</li>
+		<li>DEAD SPACE</li>
 
+		<li>DEAD SPACE</li>
+		<li>DEAD SPACE</li>
+		<li>DEAD SPACE</li>
+		<li>DEAD SPACE</li>		
+		
+		<li>DEAD SPACE</li>
+		<li>DEAD SPACE</li>
+		<li>DEAD SPACE</li>
+		<li>DEAD SPACE</li>		
+		
+		<li>DEAD SPACE</li>
+		<li>DEAD SPACE</li>
+		<li>DEAD SPACE</li>
+		<li>DEAD SPACE</li>		
+		
+		<li>DEAD SPACE</li>
+		<li>DEAD SPACE</li>
+		<li>DEAD SPACE</li>
+		<li>DEAD SPACE</li>		
+		
+		<li>DEAD SPACE</li>
+		<li>DEAD SPACE</li>
+		<li>DEAD SPACE</li>
+		<li>DEAD SPACE</li>		
+		
+		<li>DEAD SPACE</li>
+		<li>DEAD SPACE</li>
+		<li>DEAD SPACE</li>
+		<li>DEAD SPACE</li>		
+		
+		<li>DEAD SPACE</li>
+		<li>DEAD SPACE</li>
+		<li>DEAD SPACE</li>
+		<li>DEAD SPACE</li>		
+		
+		<li>DEAD SPACE</li>
+		<li>DEAD SPACE</li>
+		<li>DEAD SPACE</li>
+		<li>DEAD SPACE</li>		
+
+
+	</ol>
+	
+	
 <table border="1">
 
 		<tr>
@@ -37,9 +85,6 @@
 </c:forEach>
 </table>
 
-
-
-	<img src="WebContent/Image/logo.25.png" />
 	<jsp:include page="footer.html" />
 </body>
 </html>
