@@ -1,4 +1,6 @@
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+
 
 <html>
 <head>
@@ -26,14 +28,17 @@
 			<th>Email Name</th>
 		</tr>
 
-		<c:forEach var="tempEmployees" items="${employees_list}">
+
+
+		<c:forEach var="tempEmployees" items="${Employee}">
+
 
 			<tr>
-				<td>${tempEmployees.fullName}</td>
-				<td>${tempEmployees.onProject}</td>
+				<td>"${tempEmployees.fullName}"</td>
+				<td>"${tempEmployees.onProject}"</td>
 			</tr>
 
-</c:forEach>
+		</c:forEach>
 	</table>
 
 

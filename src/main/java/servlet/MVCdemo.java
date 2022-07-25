@@ -35,7 +35,7 @@ public class MVCdemo extends HttpServlet {
 		List<Employees> Employees = employeeUtil.getEmployees();
 
 		// add employees to request object
-		request.setAttribute("employees_list", Employees);
+		request.setAttribute("Employee", Employees);
 		// get dispatcher
 		RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
 		// send to jsp
