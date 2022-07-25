@@ -1,4 +1,4 @@
-<%@taglib  uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <html>
 <head>
@@ -7,9 +7,9 @@
 </head>
 <body>
 
-<jsp:include page="header.html"/>
+	<jsp:include page="header.html" />
 
- <img src ="WebContent/Image/logo.25.png" />
+	<img src="WebContent/Image/logo.25.png" />
 
 	<ol>
 		<li>Planner</li>
@@ -18,7 +18,7 @@
 		<li>Roles</li>
 	</ol>
 
-<table border="1">
+	<table border="1">
 
 		<tr>
 			<th>First Name</th>
@@ -26,16 +26,15 @@
 			<th>Email Name</th>
 		</tr>
 
-<c:forEach var="tempEmployees" items="${employees_list}">
+		<c:forEach var="tempEmployees" items="${employees_list}">
 
-	<tr>
-	<td>${tempEmployees.fullName}</td>
-	<td>${tempEmployees.onProject}</td>
-
-	</tr>
+			<tr>
+				<td>${tempEmployees.fullName}</td>
+				<td>${tempEmployees.onProject}</td>
+			</tr>
 
 </c:forEach>
-</table>
+	</table>
 
 
 
