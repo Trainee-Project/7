@@ -6,9 +6,9 @@
 <title>The 7 Project - Index</title>
 </head>
 <body>
+<jsp:include page="header.html"/>
 <<<<<<< HEAD
  <img src ="WebContent/Image/logo.25.png" />
-<jsp:include page="header.html"/>
 
 	<ol>
 		<li>Planner</li>
