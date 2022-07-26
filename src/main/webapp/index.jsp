@@ -30,16 +30,7 @@
 
 
 
-		<c:forEach var="tempEmployees" items="${Employee}">
-
-
-			<tr>
-				<td>"${tempEmployees.fullName}"</td>
-				<td>"${tempEmployees.onProject}"</td>
-			</tr>
-
-		</c:forEach>
-	</table>
+		
 
 
 
