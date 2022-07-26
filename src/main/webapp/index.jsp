@@ -12,7 +12,8 @@
 	<jsp:include page="header.html" />
 
 <a href="index.jsp#"> <img src="WebContent/Image/logo.25.png" style="width:42px;height:42px;"> </a>
-
+    <h1><a href="RegiForm.jsp#">Register Here</a></h1>
+    
 	<ol>
 	
 	<li>	<a href="Project.html">Projects		</a></li>	
