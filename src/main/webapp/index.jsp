@@ -1,14 +1,17 @@
-<%@taglib  uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page isELIgnored="false"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page import ="javax.servlet.*,java.text.*" %>
+
+
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <title>The 7 Project - Index</title>
 </head>
 <body>
-<<<<<<< HEAD
- <img src ="WebContent/Image/logo.25.png" />
-<jsp:include page="header.html"/>
+
+	<jsp:include page="header.html" />
+
+	<img src="WebContent/Image/logo.25.png" />
 
 	<ol>
 		<li>Planner</li>
@@ -17,7 +20,7 @@
 		<li>Roles</li>
 	</ol>
 
-<table border="1">
+	<table border="1">
 
 		<tr>
 			<th>First Name</th>
@@ -25,18 +28,20 @@
 			<th>Email Name</th>
 		</tr>
 
-<c:forEach var="tempEmployees" items="${employees_list}">
 
-	<tr>
-	<td>${tempEmployees.fullName}</td>
-	<td>${tempEmployees.onProject}</td>
 
-	</tr>
+		<c:forEach var="tempEmployees" items="${Employee}">
 
-</c:forEach>
-</table>
 
->>>>>>> branch 'main' of https://github.com/Trainee-Project/7.git
+			<tr>
+				<td>"${tempEmployees.fullName}"</td>
+				<td>"${tempEmployees.onProject}"</td>
+			</tr>
+
+		</c:forEach>
+	</table>
+
+
 
 	<img src="WebContent/Image/logo.25.png" />
 	<jsp:include page="footer.html" />
