@@ -11,13 +11,7 @@
 
 	<jsp:include page="header.html" />
 
-<<<<<<< HEAD
 <a href="index.jsp#"> <img src="WebContent/Image/logo.25.png" style="width:42px;height:42px;"> </a>
-
-
-=======
-	<img src="WebContent/Image/logo.25.png" />
->>>>>>> branch 'main' of https://github.com/Trainee-Project/7.git
 
 	<ol>
 		<li>Planner (Waiting on _ to finish so _ can link it)</li>
@@ -29,12 +23,6 @@
 		<li>DEAD SPACE</li>
 		<li>DEAD SPACE</li>
 		<li>DEAD SPACE</li>
-
-<<<<<<< HEAD
-		<li>DEAD SPACE</li>
-		<li>DEAD SPACE</li>
-		<li>DEAD SPACE</li>
-		<li>DEAD SPACE</li>		
 		
 		<li>DEAD SPACE</li>
 		<li>DEAD SPACE</li>
@@ -70,8 +58,11 @@
 		<li>DEAD SPACE</li>
 		<li>DEAD SPACE</li>
 		<li>DEAD SPACE</li>		
-
-
+		
+		<li>DEAD SPACE</li>
+		<li>DEAD SPACE</li>
+		<li>DEAD SPACE</li>
+		<li>DEAD SPACE</li>		
 	</ol>
 	
 	
@@ -98,6 +89,8 @@
 
 		</c:forEach>
 	</table>
+	
+=======
 
 	<jsp:include page="footer.html" />
 </body>
