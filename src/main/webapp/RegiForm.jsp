@@ -26,7 +26,7 @@
 	
 	<tr>
 	<td>Employee ID</td>
-	<td><input type="Number" name="employeeID" required></td>
+	<td><input type="text" name="employeeID" required></td>
 	</tr>
 	
 	<tr>
