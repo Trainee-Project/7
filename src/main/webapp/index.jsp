@@ -1,4 +1,6 @@
-<%@taglib  uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page import ="javax.servlet.*,java.text.*" %>
+
 
 <html>
 <head>
@@ -7,11 +9,15 @@
 </head>
 <body>
 
-<jsp:include page="header.html"/>
+	<jsp:include page="header.html" />
 
+<<<<<<< HEAD
 <a href="index.jsp#"> <img src="WebContent/Image/logo.25.png" style="width:42px;height:42px;"> </a>
 
 
+=======
+	<img src="WebContent/Image/logo.25.png" />
+>>>>>>> branch 'main' of https://github.com/Trainee-Project/7.git
 
 	<ol>
 		<li>Planner (Waiting on _ to finish so _ can link it)</li>
@@ -24,6 +30,7 @@
 		<li>DEAD SPACE</li>
 		<li>DEAD SPACE</li>
 
+<<<<<<< HEAD
 		<li>DEAD SPACE</li>
 		<li>DEAD SPACE</li>
 		<li>DEAD SPACE</li>
@@ -69,6 +76,9 @@
 	
 	
 <table border="1">
+=======
+	<table border="1">
+>>>>>>> branch 'main' of https://github.com/Trainee-Project/7.git
 
 		<tr>
 			<th>First Name</th>
@@ -76,16 +86,18 @@
 			<th>Email Name</th>
 		</tr>
 
-<c:forEach var="tempEmployees" items="${employees_list}">
 
-	<tr>
-	<td>${tempEmployees.fullName}</td>
-	<td>${tempEmployees.onProject}</td>
 
-	</tr>
+		<c:forEach var="tempEmployees" items="${Employee}">
 
-</c:forEach>
-</table>
+
+			<tr>
+				<td>"${tempEmployees.fullName}"</td>
+				<td>"${tempEmployees.onProject}"</td>
+			</tr>
+
+		</c:forEach>
+	</table>
 
 	<jsp:include page="footer.html" />
 </body>
