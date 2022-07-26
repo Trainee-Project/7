@@ -1,8 +1,10 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>The Seven</title>
+<title>Insert title here</title>
 <link rel="stylesheet" href="css/bootstrap.css"></link>
 <style>
 	#frm{
@@ -23,13 +25,13 @@
 	<table class= "table table hover">
 	
 	<tr>
-	<td>Employee ID</td>
-	<td><input type="Number" name="employeeID" required></td>
+	<td>EmployeeID</td>
+	<td><input type="text" name="employeeID" required></td>
 	</tr>
 	
 	<tr>
 	<td>Name</td>
-	<td><input type="text" name="employeeName" required></td>
+	<td><input type="text" name="Name" required></td>
 	</tr>
 	
 	<tr>
@@ -43,7 +45,7 @@
 	</tr>
 
 	<tr>
-	<td>Skill List ID</td>
+	<td>Skill-List-ID</td>
 	<td><input type="text" name="SkillListID" required></td>
 	</tr>
 	
