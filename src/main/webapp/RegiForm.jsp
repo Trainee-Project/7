@@ -45,7 +45,7 @@
 	</tr>
 
 	<tr>
-	<td>Skill List ID</td>
+	<td>Skill-List-ID</td>
 	<td><input type="text" name="SkillListID" required></td>
 	</tr>
 	

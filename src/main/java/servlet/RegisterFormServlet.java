@@ -37,7 +37,9 @@ public class RegisterFormServlet extends HttpServlet {
 		String name = request.getParameter("name");
 		String email = request.getParameter("email");
 		String mobile = request.getParameter("mobile");
-		String country
+		String SkillListID = request.getParameter("SkillListID");
+		String country =  request.getParameter("country");
+		
 		
 		
 		
