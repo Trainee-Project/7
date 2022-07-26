@@ -35,6 +35,9 @@ public class RegisterFormServlet extends HttpServlet {
 		//get the values
 		String EmployeeID = request.getParameter("employeeID");
 		String name = request.getParameter("name");
+		String email = request.getParameter("email");
+		String mobile = request.getParameter("mobile");
+		String country
 		
 		
 		
