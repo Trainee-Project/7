@@ -39,6 +39,7 @@ public class RegisterFormServlet extends HttpServlet {
 		String mobile = request.getParameter("mobile");
 		String SkillListID = request.getParameter("SkillListID");
 		String country =  request.getParameter("country");
+		//load the JDBC driver
 		
 		
 		
