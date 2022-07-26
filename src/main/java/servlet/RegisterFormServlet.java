@@ -33,8 +33,12 @@ public class RegisterFormServlet extends HttpServlet {
 		//set content type
 		response.setContentType("text/jsp");
 		//get the values
-		String name =
-	}
+		String EmployeeID = request.getParameter("employeeID");
+		String name = request.getParameter("name");
+		
+		
+		
+				}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

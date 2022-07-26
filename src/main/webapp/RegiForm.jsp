@@ -25,13 +25,13 @@
 	<table class= "table table hover">
 	
 	<tr>
-	<td>Employee ID</td>
+	<td>EmployeeID</td>
 	<td><input type="text" name="employeeID" required></td>
 	</tr>
 	
 	<tr>
 	<td>Name</td>
-	<td><input type="text" name="employeeName" required></td>
+	<td><input type="text" name="Name" required></td>
 	</tr>
 	
 	<tr>
