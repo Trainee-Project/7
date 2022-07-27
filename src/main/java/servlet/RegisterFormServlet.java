@@ -37,10 +37,15 @@ public class RegisterFormServlet extends HttpServlet {
 		String name = request.getParameter("name");
 		String email = request.getParameter("email");
 		String mobile = request.getParameter("mobile");
-		String SkillListID = request.getParameter("SkillListID");
+		String roles = request.getParameter("role");
 		String country =  request.getParameter("country");
 		//load the JDBC driver
-		
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
 		
 		
 		
