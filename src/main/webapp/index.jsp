@@ -15,7 +15,6 @@
     <h1><a href="RegiForm.jsp#">Register Here</a></h1>
     
 	<ol>
-	
 	<li>	<a href="Project.html">Projects		</a></li>	
 	<li>	<a href="Project.html">Planner		</a></li>	
 	<li>	<a href="Project.html">Database		</a></li>	
@@ -41,11 +40,8 @@
 		<li>DEAD SPACE</li>
 	</ol>
 	
-	
 <table border="1">
-=======
 	<table border="1">
->>>>>>> branch 'main' of https://github.com/Trainee-Project/7.git
 
 		<tr>
 			<th>First Name</th>
@@ -53,11 +49,7 @@
 			<th>Email Name</th>
 		</tr>
 
-
-
-<<<<<<< HEAD
 		<c:forEach var="tempEmployees" items="${Employee}">
-
 
 			<tr>
 				<td>"${tempEmployees.fullName}"</td>
@@ -67,11 +59,6 @@
 		</c:forEach>
 	</table>
 	
-=======
-=======
-		
->>>>>>> branch 'main' of https://github.com/Trainee-Project/7.git
-
 	<jsp:include page="footer.html" />
 </body>
 </html>
