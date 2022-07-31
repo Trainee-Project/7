@@ -2,13 +2,20 @@ package servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 /**
  * Servlet implementation class RegisterFormServlet
  */
@@ -37,20 +44,26 @@ public class RegisterFormServlet extends HttpServlet {
 		String name = request.getParameter("name");
 		String email = request.getParameter("email");
 		String mobile = request.getParameter("mobile");
-		String roles = request.getParameter("role");
 		String country =  request.getParameter("country");
 		//load the JDBC driver
-		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			
-		}catch(Exception e) {
-			e.printStackTrace();
-		}
 		
 		
 		
-				}
-
+		//generate the connection
+		
+	
+		//set the values
+		
+		
+		//execute the query
+		
+	//close the stram
+	pw.close();
+}
+	
+	//generate the connection
+	
+	
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
