@@ -28,4 +28,16 @@
 		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>src/main/webapp/NewProjectForm/NewProjectForm.html</name>
+			<type>1</type>
+			<location>C:/Users/2162576/OneDrive - Cognizant/Desktop/new/index.html</location>
+		</link>
+		<link>
+			<name>src/main/webapp/NewProjectForm/css</name>
+			<type>2</type>
+			<location>C:/Users/2162576/OneDrive - Cognizant/Desktop/new/css</location>
+		</link>
+	</linkedResources>
 </projectDescription>
