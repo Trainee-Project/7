@@ -4,11 +4,9 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
-import javax.sql.DataSource;
-
-import com.mysql.cj.exceptions.RSAException;
-
 import java.util.List;
+
+import javax.sql.DataSource;
 
 public class dbUtil {
 	private DataSource dataSource;
