@@ -14,7 +14,7 @@
 	(List<Employee>) request.getAttribute("EMPLOYEE_LIST");
 	%>
 	<jsp:include page="header.html" />
-	<a href="index.jsp#"> <img src="WebContent/Image/logo.25.png"
+	<a href="index.jsp#"> <img src="WebContent/Image/HomeLogo.png"
 		style="width: 42px; height: 42px;">
 	</a>
 	<h1>
@@ -27,25 +27,6 @@
 		<li><a href="Project.html">Database </a></li>
 		<li><a href="Project.html">Roles </a></li>
 
-		<li>Planner (Waiting on _ to finish so _ can link it)</li>
-		<li>Database (Waiting on Aaron / Nathan to finish it so Tom can
-			link it)</li>
-		<li>Roles</li>
-
-		<li>DEAD SPACE</li>
-		<li>DEAD SPACE</li>
-		<li>DEAD SPACE</li>
-		<li>DEAD SPACE</li>
-		<li>DEAD SPACE</li>
-		<li>DEAD SPACE</li>
-		<li>DEAD SPACE</li>
-		<li>DEAD SPACE</li>
-		<li>DEAD SPACE</li>
-		<li>DEAD SPACE</li>
-		<li>DEAD SPACE</li>
-		<li>DEAD SPACE</li>
-		<li>DEAD SPACE</li>
-		<li>DEAD SPACE</li>
 	</ol>
 
 	<table border="1">
