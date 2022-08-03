@@ -7,7 +7,6 @@
 <meta charset="ISO-8859-1">
 <title>The7 - Index</title>
 
-
 <%-- 	
 // 	// get the employees from the request object (sent by servlet)
 // 	List<Employee> theEmployees = 
@@ -28,21 +27,18 @@ style="width: 150px; height: 150px;"></a>
 style="width: 150px; height: 150px;"></a>
 
 <%-- 	//Planner link 	--%>
-<a href="RegiForm.jsp#"> <img src="WebContent/Image/Register Logo.png"
+<a href=" _ #"> <img src="WebContent/Image/ _ .png"
 style="width: 150px; height: 150px;"></a>
 
 <%-- 	//Database link 	--%>
-<a href="RegiForm.jsp#"> <img src="WebContent/Image/Register Logo.png"
+<a href=" _ #"> <img src="WebContent/Image/ _ .png"
 style="width: 150px; height: 150px;"></a>
 
 <%-- 	//Registration link 	--%>
 <a href="RegiForm.jsp#"> <img src="WebContent/Image/Register Logo.png"
 style="width: 150px; height: 150px;"></a>
 	
-
-
 	<table border="1">
-
 
 		<tr>
 			<th>First Name</th>
