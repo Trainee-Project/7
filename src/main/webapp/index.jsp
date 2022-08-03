@@ -18,13 +18,27 @@
 <body>
 	
 	<jsp:include page="header.html" />
-	<a href="index.jsp#"> <img src="WebContent/Image/HomeLogo.png"
-		style="width: 42px; height: 42px;">
-	</a>
-	<h1>
-		<a href="RegiForm.jsp#">Register Here</a>
-	</h1>
+	
+<%-- 	//Home link 	--%>
+<a href="index.jsp#"> <img src="WebContent/Image/HomeLogo.png"
+style="width: 150px; height: 150px;"></a>
 
+<%-- 	//Projects link 	--%>
+<a href="Project.html#"> <img src="WebContent/Image/Project.png"
+style="width: 150px; height: 150px;"></a>
+
+<%-- 	//Planner link 	--%>
+<a href="RegiForm.jsp#"> <img src="WebContent/Image/Register Logo.png"
+style="width: 150px; height: 150px;"></a>
+
+<%-- 	//Database link 	--%>
+<a href="RegiForm.jsp#"> <img src="WebContent/Image/Register Logo.png"
+style="width: 150px; height: 150px;"></a>
+
+<%-- 	//Registration link 	--%>
+<a href="RegiForm.jsp#"> <img src="WebContent/Image/Register Logo.png"
+style="width: 150px; height: 150px;"></a>
+	
 	<ol>
 		<li><a href="Project.html">Projects </a></li>
 		<li><a href="Project.html">Planner </a></li>
