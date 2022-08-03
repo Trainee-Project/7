@@ -39,13 +39,7 @@ style="width: 150px; height: 150px;"></a>
 <a href="RegiForm.jsp#"> <img src="WebContent/Image/Register Logo.png"
 style="width: 150px; height: 150px;"></a>
 	
-	<ol>
-		<li><a href="Project.html">Projects </a></li>
-		<li><a href="Project.html">Planner </a></li>
-		<li><a href="Project.html">Database </a></li>
-		<li><a href="Project.html">Roles </a></li>
 
-	</ol>
 
 	<table border="1">
 
