@@ -1,6 +1,7 @@
 package dataBase;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.annotation.Resource;
 import javax.servlet.RequestDispatcher;
@@ -10,7 +11,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
-import java.util.List;
 
 
 /**
@@ -56,7 +56,7 @@ public class employeeList extends HttpServlet {
 		//add employees to request
 		request.setAttribute("EMPLOYEES_LIST", Employees);
 		//send to jsp (view)
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
 		dispatcher.forward(request,response);
 		
 	}

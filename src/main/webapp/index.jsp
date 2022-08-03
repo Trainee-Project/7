@@ -6,13 +6,17 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>The7 - Index</title>
+
+
+<%-- 	
+// 	// get the employees from the request object (sent by servlet)
+// 	List<Employee> theEmployees = 
+// 	(List<Employee>) request.getAttribute("EMPLOYEES_LIST");
+ --%>
+
 </head>
 <body>
-	<%
-	// get the employees from the request object (sent by servlet)
-	List<Employee> theEmployees = 
-	(List<Employee>) request.getAttribute("EMPLOYEE_LIST");
-	%>
+	
 	<jsp:include page="header.html" />
 	<a href="index.jsp#"> <img src="WebContent/Image/logo.25.png"
 		style="width: 42px; height: 42px;">
@@ -56,7 +60,7 @@
 			<th>Last Name</th>
 			<th>Email Name</th>
 		</tr>
-
+<%--
 		<%
 		for (Employee tempEmployee : theEmployees) {
 		%>
@@ -64,15 +68,13 @@
 		<tr>
 			<td><%=tempEmployee.getId()%></td>
 			<td><%=tempEmployee.getName()%></td>
-			<td><%=tempEmployee.getEmail()%></td>
-			<td><%=tempEmployee.getEmail()%></td>
-			<td><%=tempEmployee.getEmail()%></td>
+			
 		</tr>
 
 		<%
 		}
 		%>
-
+ --%>
 	</table>
 
 	<jsp:include page="footer.html" />
