@@ -19,11 +19,11 @@
 	<jsp:include page="header.html" />
 	
 <%-- 	//Home link 	--%>
-<a href="index.jsp#"> <img src="WebContent/Image/HomeLogo.png"
+<a href="index.jsp#"> <img src="WebContent/Image/Home.png"
 style="width: 150px; height: 150px;"></a>
 
 <%-- 	//Projects link 	--%>
-<a href="PjForm.html#"> <img src="WebContent/Image/Project.png"
+<a href="PjForm.html#"> <img src="WebContent/Image/Projects.png"
 style="width: 150px; height: 150px;"></a>
 
 <%-- 	//Planner link 	--%>
