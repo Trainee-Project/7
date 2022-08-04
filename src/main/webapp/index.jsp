@@ -23,15 +23,15 @@
 style="width: 150px; height: 150px;"></a>
 
 <%-- 	//Projects link 	--%>
-<a href="Project.html#"> <img src="WebContent/Image/Project.png"
+<a href="PjForm.html#"> <img src="WebContent/Image/Project.png"
 style="width: 150px; height: 150px;"></a>
 
 <%-- 	//Planner link 	--%>
-<a href=" _ #"> <img src="WebContent/Image/ _ .png"
+<a href=" _ #"> <img src="WebContent/Image/Planner.png"
 style="width: 150px; height: 150px;"></a>
 
 <%-- 	//Database link 	--%>
-<a href=" _ #"> <img src="WebContent/Image/ _ .png"
+<a href=" _ #"> <img src="WebContent/Image/Database.png"
 style="width: 150px; height: 150px;"></a>
 
 <%-- 	//Registration link 	--%>
