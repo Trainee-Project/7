@@ -1,3 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Context path="/">
-</Context>
+<Resource name="jdbc/employee_planner"
+auth="Container" type="javax.sql.DataSource"
+maxActive="20" maxIdle="5" maxWait="10000"
+username="root" password="Trainees7$"
+driverClassName="com,mysql.jbdc.Driver"
+url="jdbc:mysql://localost:3306/mydb?useSSL=false&amp;serverTimezone=UTC"/>
+</Context> 
