@@ -34,17 +34,10 @@ style="width: 150px; height: 150px;"></a>
 <a href=" _ #"> <img src="WebContent/Image/Database.png"
 style="width: 150px; height: 150px;"></a>
 
-<%-- 	//Registration link 	--%>
-<a href="RegiForm.jsp#"> <img src="WebContent/Image/Register Logo.png"
+<%-- 	//Add Employee link 	--%>
+<a href="RegiForm.jsp#"> <img src="WebContent/Image/AddEmployee.png"
 style="width: 150px; height: 150px;"></a>
 	
-	<table border="1">
-
-		<tr>
-			<th>First Name</th>
-			<th>Last Name</th>
-			<th>Email Name</th>
-		</tr>
 <%--
 		<%
 		for (Employee tempEmployee : theEmployees) {
@@ -60,7 +53,6 @@ style="width: 150px; height: 150px;"></a>
 		}
 		%>
  --%>
-	</table>
 
 	<jsp:include page="footer.html" />
 </body>
