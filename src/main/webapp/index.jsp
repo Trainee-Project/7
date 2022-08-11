@@ -43,14 +43,12 @@ style="width: 150px; height: 150px;"></a>
 style="width: 150px; height: 150px;"></a>
 
 <%-- 	//Add Project link 	--%>
-<a href="PjForm.html#"> <img src="WebContent/Image/AddProject.png"
+<a href="Project.html#"> <img src="WebContent/Image/AddProject.png"
 style="width: 150px; height: 150px;"></a>
 
 <%-- 	//View Project link 	--%>
 <a href="_ #"> <img src="WebContent/Image/ViewProject.png"
 style="width: 150px; height: 150px;"></a>
-
-
 	
 <%--
 		<%
