@@ -53,7 +53,7 @@ public class EditRecordServlet extends HttpServlet {
 		}
 		
 		//generate the connection
-		try(Connection con = DriverManager.getConnection("jdbc:mysql:///usermgmt","root","root");
+		try(Connection con = DriverManager.getConnection("jdbc:mysql:///mydb","root","root");
 				PreparedStatement ps = con.prepareStatement(query);){
 			//set the values
 			ps.setString(1, name);
