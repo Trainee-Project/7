@@ -22,21 +22,35 @@
 <a href="index.jsp#"> <img src="WebContent/Image/Home.png"
 style="width: 150px; height: 150px;"></a>
 
-<%-- 	//Projects link 	--%>
+<%-- 	//Projects link 	
 <a href="PjForm.html#"> <img src="WebContent/Image/Projects.png"
-style="width: 150px; height: 150px;"></a>
+style="width: 150px; height: 150px;"></a>	--%>
 
-<%-- 	//Planner link 	--%>
+<%-- 	//Planner link 	
 <a href=" _ #"> <img src="WebContent/Image/Planner.png"
-style="width: 150px; height: 150px;"></a>
+style="width: 150px; height: 150px;"></a>	--%>
 
-<%-- 	//Database link 	--%>
+<%-- 	//Database link 	
 <a href=" _ #"> <img src="WebContent/Image/Database.png"
-style="width: 150px; height: 150px;"></a>
+style="width: 150px; height: 150px;"></a>	--%>
 
 <%-- 	//Add Employee link 	--%>
 <a href="RegiForm.jsp#"> <img src="WebContent/Image/AddEmployee.png"
 style="width: 150px; height: 150px;"></a>
+
+<%-- 	//View Employee link 	--%>
+<a href="_ #"> <img src="WebContent/Image/ViewEmployee.png"
+style="width: 150px; height: 150px;"></a>
+
+<%-- 	//Add Project link 	--%>
+<a href="_ #"> <img src="WebContent/Image/AddProject.png"
+style="width: 150px; height: 150px;"></a>
+
+<%-- 	//View Project link 	--%>
+<a href="_ #"> <img src="WebContent/Image/ViewProject.png"
+style="width: 150px; height: 150px;"></a>
+
+
 	
 <%--
 		<%
