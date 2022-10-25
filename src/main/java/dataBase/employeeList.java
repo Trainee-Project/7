@@ -13,9 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 
 
-/**
- * Servlet implementation class List
- */
+
 @WebServlet("/List")
 public class employeeList extends HttpServlet {
 	private static final long serialVersionUID = 1L;

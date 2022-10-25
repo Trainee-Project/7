@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page import="javax.servlet.*,java.text.*, dataBase.*,java.util.*  "%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 
 <html>
@@ -7,11 +8,6 @@
 <meta charset="ISO-8859-1">
 <title>The7 - Index</title>
 
-<%-- 	
-// 	// get the employees from the request object (sent by servlet)
-// 	List<Employee> theEmployees = 
-// 	(List<Employee>) request.getAttribute("EMPLOYEES_LIST");
- --%>
 
 </head>
 <body>
@@ -50,21 +46,26 @@ style="width: 150px; height: 150px;"></a>
 <a href="_ #"> <img src="WebContent/Image/ViewProject.png"
 style="width: 150px; height: 150px;"></a>
 	
-<%--
-		<%
-		for (Employee tempEmployee : theEmployees) {
-		%>
 
-		<tr>
-			<td><%=tempEmployee.getId()%></td>
-			<td><%=tempEmployee.getName()%></td>
+
+<c:forEach var="tempEmployee" items="${EMPLOYEES_LIST}">
+<tr>
+			<td>${tempEmployee.id}</td>
+			<td>${tempEmployee.name}</td>
+			<td>${tempEmployee.active}</td>
+			<td>${tempEmployee.email}</td>
+			<td>${tempEmployee.phone}</td>
+			<td>${tempEmployee.country}</td>
+						
+			
+			
 			
 		</tr>
+</c:forEach>
 
-		<%
-		}
-		%>
- --%>
+
+	
+ 
 
 	<jsp:include page="footer.html" />
 </body>

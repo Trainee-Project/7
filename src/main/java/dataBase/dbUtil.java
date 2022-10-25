@@ -25,7 +25,7 @@ public class dbUtil {
 			myConn = dataSource.getConnection();
 
 			// sql statement
-			String sql = "select * from People";
+			String sql = "select * from Employee";
 			myStmt = myConn.createStatement();
 			// exceute query
 			myRs = myStmt.executeQuery(sql);
