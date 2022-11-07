@@ -4,6 +4,6 @@
 auth="Container" type="javax.sql.DataSource"
 maxActive="20" maxIdle="5" maxWait="10000"
 username="tracker" password="tracker"
-driverClassName="com,mysql.cj.jbdc.Driver"
-url="jdbc:mysql://localost:3306/mydb?useSSL=false&amp;serverTimezone=UTC"/>
+driverClassName="com.mysql.jbdc.Driver"
+url="jdbc:mysql://localost:3306/mydb?useSSL=false&amp;allowPublicKeyRetrieval=true"/>
 </Context> 

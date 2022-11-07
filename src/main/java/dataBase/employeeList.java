@@ -26,7 +26,7 @@ public class employeeList extends HttpServlet {
 	public void init() throws ServletException {
 		//create dbutil and pass in conn pool/datasource
 		try {
-			Dbutil =new dbUtil (dataSource);
+			Dbutil =new dbUtil(dataSource);
 			
 		}
 		catch(Exception exc) {
