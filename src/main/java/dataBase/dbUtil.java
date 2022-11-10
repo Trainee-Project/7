@@ -49,11 +49,45 @@ public class dbUtil {
 		} finally {
 			// close JDBC objects
 			close(myConn, myStmt, myRs);
-		}
+		}}
+	
 
-	}
+	public List<Project> getProjects() throws Exception {
+			List<Project> project = new ArrayList<>();
+			Connection myConn = null;
+			Statement myStmt = null;
+			ResultSet myRs = null;
+			try {
+				// get a connection
+				myConn = dataSource.getConnection();
 
-	private void close(Connection myConn, Statement myStmt, ResultSet myRs) {
+				// sql statement
+				String sql = "select * from Project";
+				myStmt = myConn.createStatement();
+				// exceute query
+				myRs = myStmt.executeQuery(sql);
+
+				// process result set
+				while (myRs.next()) {
+					// retrive data from set row
+					 int projectId = myRs.getInt("Project_ID");
+					 String projectName= myRs.getString("Project_Name");
+					 String projectStatus= myRs.getString("Project_Status");
+				     String startDate = myRs.getString("Start_Date");
+					 String endDate= myRs.getString("End_Date");
+					// create new employee object
+					Project tempProject = new Project(projectId,projectName,projectStatus,startDate,endDate);
+					// add to aray list
+					project.add(tempProject);
+				}
+
+				return project;
+			} finally {
+				// close JDBC objects
+				close(myConn, myStmt, myRs);
+			}}
+	
+	public void close(Connection myConn, Statement myStmt, ResultSet myRs) {
 		try {
 			if (myRs != null) {
 				myRs.close();
@@ -68,6 +102,7 @@ public class dbUtil {
 
 		} catch (Exception exc) {
 			exc.printStackTrace();
-		}
-	}
-}
+		}}}
+	
+
+	

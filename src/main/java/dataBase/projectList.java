@@ -14,8 +14,8 @@ import javax.sql.DataSource;
 
 
 
-@WebServlet("/EmployeeList")
-public class employeeList extends HttpServlet {
+@WebServlet("/ProjectList")
+public class projectList extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private dbUtil Dbutil;
 	
@@ -44,25 +44,23 @@ public class employeeList extends HttpServlet {
 
 		//list employees in mvc way
 		try {
-			listEmployees(request,response);
+			listProject(request,response);
 			
 		} catch (Exception e) {
 			throw new ServletException(e);
 		}
 	}
 
-	private void listEmployees(HttpServletRequest request, HttpServletResponse response) throws Exception {
+	private void listProject(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
 		//get expmloyyes from dbutil
-		List<Employee> Employees =Dbutil.getEmployees();
+		List<Project> project =Dbutil.getProjects();
 		//add employees to request
-		request.setAttribute("EMPLOYEES_LIST", Employees);
+		request.setAttribute("PROJECT_LIST", project);
 		//send to jsp (view)pw.println("<div style='margin:auto;width:900px;margin-top:100px;'>");
 	
-		RequestDispatcher dispatcher = request.getRequestDispatcher("employeeView.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("projectView.jsp");
 		dispatcher.forward(request,response);
 		
 	}}
-
-
 
