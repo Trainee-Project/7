@@ -1,5 +1,5 @@
-
 <%@ page import="javax.servlet.*,java.text.*, dataBase.*,java.util.*  "%>
+
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <html>
@@ -26,7 +26,7 @@ style="width: 150px; height: 150px;"></a>	--%>
 style="width: 150px; height: 150px;"></a>	--%>
 
 
-<a href="/EmployeeList"> <img src="WebContent/Image/Database.png"
+<a href="employeeList.jsp"> <img src="WebContent/Image/Database.png"
 style="width: 150px; height: 150px;"></a>	
 
 <%-- 	//Add Employee link 	--%>

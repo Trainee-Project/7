@@ -59,7 +59,7 @@ public class employeeList extends HttpServlet {
 		request.setAttribute("EMPLOYEES_LIST", Employees);
 		//send to jsp (view)pw.println("<div style='margin:auto;width:900px;margin-top:100px;'>");
 	
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/employeeView.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("employeeList.jsp");
 		dispatcher.forward(request,response);
 		
 	}}
