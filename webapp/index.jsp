@@ -25,9 +25,9 @@ style="width: 150px; height: 150px;"></a>	--%>
 <a href=" _ #"> <img src="WebContent/Image/Planner.png"
 style="width: 150px; height: 150px;"></a>	--%>
 
-<%-- 	//Database link 	
-<a href=" _ #"> <img src="WebContent/Image/Database.png"
-style="width: 150px; height: 150px;"></a>	--%>
+
+<a href="/EmployeeList"> <img src="WebContent/Image/Database.png"
+style="width: 150px; height: 150px;"></a>	
 
 <%-- 	//Add Employee link 	--%>
 <a href="_#"> <img src="WebContent/Image/AddEmployee.png"
@@ -47,21 +47,6 @@ style="width: 150px; height: 150px;"></a>
 	
 
 
-
-<c:forEach var="tempEmployee" items="${EMPLOYEES_LIST}">
-<tr>
-			<td>${tempEmployee.id}</td>
-			<td>${tempEmployee.name}</td>
-			<td>${tempEmployee.active}</td>
-			<td>${tempEmployee.email}</td>
-			<td>${tempEmployee.phone}</td>
-			<td>${tempEmployee.country}</td>
-						
-			
-			
-			
-		</tr>
-</c:forEach>
 
 
 	
