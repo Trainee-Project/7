@@ -30,7 +30,9 @@ public class employeeList extends HttpServlet {
 			
 		}
 		catch(Exception exc) {
+			System.out.print("error");
 			throw new ServletException(exc);
+			
 		}
 		super.init();
 	}
@@ -39,24 +41,28 @@ public class employeeList extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+
 		//list employees in mvc way
 		try {
 			listEmployees(request,response);
+			
 		} catch (Exception e) {
 			throw new ServletException(e);
 		}
 	}
 
 	private void listEmployees(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		
 		//get expmloyyes from dbutil
 		List<Employee> Employees =Dbutil.getEmployees();
 		//add employees to request
 		request.setAttribute("EMPLOYEES_LIST", Employees);
-		//send to jsp (view)
-		RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
+		//send to jsp (view)pw.println("<div style='margin:auto;width:900px;margin-top:100px;'>");
+	
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
 		dispatcher.forward(request,response);
 		
-	}
+	}}
 
-}
+
+
