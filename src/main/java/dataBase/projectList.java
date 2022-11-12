@@ -25,6 +25,7 @@ public class projectList extends HttpServlet {
 	@Override
 	public void init() throws ServletException {
 		//create dbutil and pass in conn pool/datasource
+		super.init();
 		try {
 			Dbutil =new dbUtil(dataSource);
 			
@@ -34,23 +35,63 @@ public class projectList extends HttpServlet {
 			throw new ServletException(exc);
 			
 		}
-		super.init();
 	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		//list employees in mvc way
+		
 		try {
-			listProject(request,response);
+			// read the "command" parameter
+			String theCommand = request.getParameter("command");
 			
-		} catch (Exception e) {
-			throw new ServletException(e);
-		}
-	}
+			// if the command is missing, then default to listing students
+			if (theCommand == null) {
+				theCommand = "LIST";
+			}
+			
+			// route to the appropriate method
+			switch (theCommand) {
+			
 
+			case "LIST":
+				listProject(request, response);
+				break;
+				
+			case "ADD":
+				addProject(request, response);
+				break;
+				
+			
+			}
+				
+		}
+		catch (Exception exc) {
+			throw new ServletException(exc);
+		}
+		
+	
+	}
+	private void addProject(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+		// read student info from form data
+		int projectId = Integer.parseInt(request.getParameter("Project ID"));
+		String projectName = request.getParameter("Project Name");
+		String projectStatus = request.getParameter("Project Status");
+		String startDate = request.getParameter("Start Date");		
+		String endDate = request.getParameter("End Date");		
+
+		
+		// create a new student object
+		Project theProject = new Project(projectId, projectName, projectStatus, startDate, endDate);
+		
+		// add the student to the database 
+		dbUtil.addProject(theProject);
+				
+		// send back to main page (the student list)
+		listProject(request, response);
+	}
 	private void listProject(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
 		//get expmloyyes from dbutil

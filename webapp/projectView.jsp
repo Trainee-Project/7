@@ -20,6 +20,7 @@
 <th>Project Status</th>
 <th>Start Date</th>
 <th>End Date</th>
+<th>(Dates Are In (YYYY/MM/DD))</th>
 
 </tr>
 

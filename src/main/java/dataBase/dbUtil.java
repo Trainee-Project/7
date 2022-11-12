@@ -1,6 +1,7 @@
 package dataBase;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -9,7 +10,7 @@ import java.util.List;
 import javax.sql.DataSource;
 
 public class dbUtil {
-	private DataSource dataSource;
+	private static DataSource dataSource;
 
 	public dbUtil(DataSource theDataSource) {
 		dataSource = theDataSource;
@@ -86,8 +87,67 @@ public class dbUtil {
 				// close JDBC objects
 				close(myConn, myStmt, myRs);
 			}}
-	
-	public void close(Connection myConn, Statement myStmt, ResultSet myRs) {
+
+	public void addEmployee(Employee theEmployee) throws Exception {
+
+		Connection myConn = null;
+		PreparedStatement myStmt = null;
+		
+		try {
+			// get db connection
+			myConn = dataSource.getConnection();
+			
+			// create sql for insert
+			String sql = "insert into employee "
+					   + "(first_name, last_name, email) "
+					   + "values (?, ?, ?)";
+			
+			myStmt = myConn.prepareStatement(sql);
+			
+			// set the param values for the student
+			//myStmt.setString(1, theEmployee.getFirstName());
+			//myStmt.setString(2, theEmployee.getLastName());
+			//myStmt.setString(3, theEmployee.getEmail());
+			
+			// execute sql insert
+			myStmt.execute();
+		}
+		finally {
+			// clean up JDBC objects
+			close(myConn, myStmt, null);
+		}
+	}
+
+	public static void addProject(Project theProject) throws Exception {
+
+		Connection myConn = null;
+		PreparedStatement myStmt = null;
+		
+		try {
+			// get db connection
+			myConn = dataSource.getConnection();
+			
+			// create sql for insert
+			String sql = "insert into project " + "values (?, ?, ?,?,?)";
+			
+			myStmt = myConn.prepareStatement(sql);
+			
+			// set the param values for the student
+			myStmt.setInt(1, theProject.getProjectId());
+			myStmt.setString(2, theProject.getProjectName());
+			myStmt.setString(3, theProject.getProjectStatus());
+			myStmt.setString(4, theProject.getStartDate());
+			myStmt.setString(5, theProject.getEndDate());
+		
+			// execute sql insert
+			myStmt.execute();
+		}
+		finally {
+			// clean up JDBC objects
+			close(myConn, myStmt, null);
+		}
+	}
+	public static void close(Connection myConn, Statement myStmt, ResultSet myRs) {
 		try {
 			if (myRs != null) {
 				myRs.close();

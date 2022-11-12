@@ -2,7 +2,7 @@
 <Context path="/">
 <Resource name="jdbc/employee_planner"
 auth="Container" type="javax.sql.DataSource"
-maxActive="20"  maxIdle="5" maxWait="10000"
+maxActive="2000"  maxIdle="50000000" maxWait="10000"
 username="root" password="123456"
 driverClassName="com.mysql.cj.jdbc.Driver"
 url="jdbc:mysql://localhost:3306/mydb?user=rootuseSSL=false&amp;serverTimezone=UTC"/>

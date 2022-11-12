@@ -41,16 +41,50 @@ public class employeeList extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		//list employees in mvc way
 		try {
-			listEmployees(request,response);
+			// read the "command" parameter
+			String theCommand = request.getParameter("command");
 			
-		} catch (Exception e) {
-			throw new ServletException(e);
+			// if the command is missing, then default to listing students
+			if (theCommand == null) {
+				theCommand = "LIST";
+			}
+			
+			// route to the appropriate method
+			switch (theCommand) {
+			
+				
+			case "ADD":
+				addStudent(request, response);
+				break;
+				
+			default:
+				listEmployees(request, response);
+			}
+				
 		}
+		catch (Exception exc) {
+			throw new ServletException(exc);
+		}
+		
+		
 	}
+	private void addStudent(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
+		// read student info from form data
+		String firstName = request.getParameter("firstName");
+		String lastName = request.getParameter("lastName");
+		String email = request.getParameter("email");		
+		
+		// create a new student object
+		Student theStudent = new Student(firstName, lastName, email);
+		
+		// add the student to the database
+		studentDbUtil.addStudent(theStudent);
+				
+		// send back to main page (the student list)
+		listStudents(request, response);
+	}
 	private void listEmployees(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
 		//get expmloyyes from dbutil
