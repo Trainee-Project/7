@@ -14,7 +14,7 @@
 	
 	
 		<div id="container">
-		<h3>Add Student</h3>
+		<h3>Add Project</h3>
 		
 		<form action="ProjectList" method="GET">
 		
@@ -25,28 +25,28 @@
 				<tbody>
 				
 					<tr>
-						<td><label>First name:</label></td>
+						<td><label>Project ID:</label></td>
 						<td><input type="text" name="Project ID" /></td>
 					</tr>
 
 					<tr>
-						<td><label>Last name:</label></td>
+						<td><label>Project Name:</label></td>
 						<td><input type="text" name="Project Name" /></td>
 					</tr>
 
 					<tr>
-						<td><label>Email:</label></td>
+						<td><label>Project Status:</label></td>
 						<td><input type="text" name="Project Status" /></td>
 						
 					</tr>
 					
 					<tr>
-						<td><label>Email:</label></td>
+						<td><label>Start Date:</label></td>
 						<td><input type="text" name="Start Date" /></td>
 					</tr>
 					
 					<tr>
-						<td><label>Email:</label></td>
+						<td><label>End Date:</label></td>
 						<td><input type="text" name="End Date" /></td>
 						
 					</tr>

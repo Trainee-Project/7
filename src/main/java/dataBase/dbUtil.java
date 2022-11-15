@@ -51,7 +51,7 @@ public class dbUtil {
 			// close JDBC objects
 			close(myConn, myStmt, myRs);
 		}}
-	
+
 
 	public List<Project> getProjects() throws Exception {
 			List<Project> project = new ArrayList<>();
@@ -88,27 +88,27 @@ public class dbUtil {
 				close(myConn, myStmt, myRs);
 			}}
 
-	public void addEmployee(Employee theEmployee) throws Exception {
+	public static void addEmployee(Employee theEmployee) throws Exception {
 
 		Connection myConn = null;
 		PreparedStatement myStmt = null;
-		
+
 		try {
 			// get db connection
 			myConn = dataSource.getConnection();
-			
+
 			// create sql for insert
-			String sql = "insert into employee "
-					   + "(first_name, last_name, email) "
-					   + "values (?, ?, ?)";
-			
+			String sql = "insert into employee " + "values (?, ?, ?,?,?,?)";
+
 			myStmt = myConn.prepareStatement(sql);
-			
-			// set the param values for the student
-			//myStmt.setString(1, theEmployee.getFirstName());
-			//myStmt.setString(2, theEmployee.getLastName());
-			//myStmt.setString(3, theEmployee.getEmail());
-			
+
+			// set the param values for the employee
+			myStmt.setInt(1, theEmployee.getId());
+			myStmt.setString(2, theEmployee.getName());
+			myStmt.setInt(3, theEmployee.getActive());
+			myStmt.setString(4, theEmployee.getEmail());
+			myStmt.setInt(5, theEmployee.getPhone());
+			myStmt.setString(6, theEmployee.getCountry());
 			// execute sql insert
 			myStmt.execute();
 		}
@@ -122,23 +122,23 @@ public class dbUtil {
 
 		Connection myConn = null;
 		PreparedStatement myStmt = null;
-		
+
 		try {
 			// get db connection
 			myConn = dataSource.getConnection();
-			
+
 			// create sql for insert
 			String sql = "insert into project " + "values (?, ?, ?,?,?)";
-			
+
 			myStmt = myConn.prepareStatement(sql);
-			
+
 			// set the param values for the student
 			myStmt.setInt(1, theProject.getProjectId());
 			myStmt.setString(2, theProject.getProjectName());
 			myStmt.setString(3, theProject.getProjectStatus());
 			myStmt.setString(4, theProject.getStartDate());
 			myStmt.setString(5, theProject.getEndDate());
-		
+
 			// execute sql insert
 			myStmt.execute();
 		}
@@ -163,6 +163,5 @@ public class dbUtil {
 		} catch (Exception exc) {
 			exc.printStackTrace();
 		}}}
-	
 
-	
+

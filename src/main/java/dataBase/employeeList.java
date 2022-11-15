@@ -55,9 +55,11 @@ public class employeeList extends HttpServlet {
 			
 				
 			case "ADD":
-				addStudent(request, response);
+				addEmployee(request, response);
 				break;
-				
+			case "LIST":
+				listEmployees(request, response);
+				break;
 			default:
 				listEmployees(request, response);
 			}
@@ -69,22 +71,24 @@ public class employeeList extends HttpServlet {
 		
 		
 	}
-	private void addStudent(HttpServletRequest request, HttpServletResponse response) throws Exception {
-
+	private void addEmployee(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// read student info from form data
-		String firstName = request.getParameter("firstName");
-		String lastName = request.getParameter("lastName");
-		String email = request.getParameter("email");		
-		
+		int id = Integer.parseInt(request.getParameter("ID"));
+		String name =request.getParameter("Name");
+		int active = Integer.parseInt(request.getParameter("Active"));
+		String email =request.getParameter("Email");
+		int phone = Integer.parseInt(request.getParameter("Phone"));
+		String country =request.getParameter("Country");
 		// create a new student object
-		Student theStudent = new Student(firstName, lastName, email);
+		Employee theEmployee = new Employee(id,name,active,email,phone,country);
 		
 		// add the student to the database
-		studentDbUtil.addStudent(theStudent);
+		dbUtil.addEmployee(theEmployee);
 				
 		// send back to main page (the student list)
-		listStudents(request, response);
+		listEmployees(request, response); 
 	}
+	
 	private void listEmployees(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
 		//get expmloyyes from dbutil

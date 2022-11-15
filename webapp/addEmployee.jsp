@@ -1,5 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+
+	<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="javax.servlet.*,java.text.*, dataBase.*,java.util.*  "%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,7 +15,7 @@
 	<div id="container">
 		<h3>Add Student</h3>
 
-		<form action="StudentControllerServlet" method="GET">
+		<form action="EmployeeList" method="GET">
 
 			<input type="hidden" name="command" value="ADD" />
 
@@ -22,20 +25,35 @@
 
 					<tr>
 
-						<td><label>First name:</label></td>
-						<td><input type="text" name="firstName" /></td>
+						<td><label>ID:</label></td>
+						<td><input type="text" name="ID" /></td>
 					</tr>
 
 					<tr>
-						<td><label>Last name:</label></td>
-						<td><input type="text" name="lastName" /></td>
+						<td><label>Name:</label></td>
+						<td><input type="text" name="Name" /></td>
+					</tr>
+
+					<tr>
+						<td><label>Active:</label></td>
+						<td><input type="text" name="Active" /></td>
 					</tr>
 
 					<tr>
 						<td><label>Email:</label></td>
-						<td><input type="text" name="email" /></td>
-					</tr>
+						<td><input type="text" name="Email" /></td>
 
+					</tr>
+					<tr>
+						<td><label>Phone:</label></td>
+						<td><input type="text" name="Phone" /></td>
+
+					</tr>
+						<tr>
+						<td><label>Country:</label></td>
+						<td><input type="text" name="Country" /></td>
+
+					</tr>
 					<tr>
 						<td><label></label></td>
 						<td><input type="submit" value="Save" class="save" /></td>
@@ -45,7 +63,7 @@
 			</table>
 		</form>
 
-	
+
 	</div>
 	<jsp:include page="footer.html" />
 </body>
