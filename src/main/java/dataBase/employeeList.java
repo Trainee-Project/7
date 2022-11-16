@@ -53,13 +53,22 @@ public class employeeList extends HttpServlet {
 			// route to the appropriate method
 			switch (theCommand) {
 			
+			case "LIST":
+				listEmployees(request, response);
+				break;
 				
 			case "ADD":
 				addEmployee(request, response);
 				break;
-			case "LIST":
-				listEmployees(request, response);
+				
+			case "LOAD":
+				loadEmployee(request, response);
 				break;
+				
+			case "UPDATE":
+				updateEmployee(request, response);
+				break;
+							
 			default:
 				listEmployees(request, response);
 			}
@@ -69,8 +78,10 @@ public class employeeList extends HttpServlet {
 			throw new ServletException(exc);
 		}
 		
-		
 	}
+		
+		
+	
 	private void addEmployee(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// read student info from form data
 		int id = Integer.parseInt(request.getParameter("ID"));
@@ -100,7 +111,41 @@ public class employeeList extends HttpServlet {
 		RequestDispatcher dispatcher = request.getRequestDispatcher("employeeView.jsp");
 		dispatcher.forward(request,response);
 		
+	}
+
+	private void loadEmployee(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+			// read student id from form data
+			int id = Integer.parseInt(request.getParameter("ID"));
+			
+			// get student from database (db util)
+			Employee theEmployee = dbUtil.getEmployee(id);
+			
+			// place student in the request attribute
+			request.setAttribute("THE_STUDENT", theStudentId);
+			
+			// send to jsp page: update-student-form.jsp
+			RequestDispatcher dispatcher = 
+					request.getRequestDispatcher("/update-student-form.jsp");
+			dispatcher.forward(request, response);		
+			
+			
+	}
+	private void updateEmployee(HttpServletRequest request, HttpServletResponse response)
+			throws Exception {
+
+			// read student info from form data
+			int id = Integer.parseInt(request.getParameter("studentId"));
+			String firstName = request.getParameter("firstName");
+			String lastName = request.getParameter("lastName");
+			String email = request.getParameter("email");
+			
+			// create a new student object
+			Student theStudent = new Student(id, firstName, lastName, email);
+			
+			// perform update on database
+			studentDbUtil.updateStudent(theStudent);
+			
+			// send them back to the "list students" page
+			listStudents(request, response);
 	}}
-
-
-
