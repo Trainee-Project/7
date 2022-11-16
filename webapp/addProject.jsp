@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+
 <%@ page import="javax.servlet.*,java.text.*, dataBase.*,java.util.*  "%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     
@@ -54,9 +53,11 @@
 						<td><label></label></td>
 						<td><input type="submit" value="Save" class="save" /></td>
 					</tr>
-				
+		
 				</tbody>
-			</table>
+			</table>		<p>
+			<a href="EmployeeList">Back to List</a>
+		</p>
 		</form>
 		</div>
 	

@@ -3,7 +3,7 @@
 <Resource name="jdbc/employee_planner"
 auth="Container" type="javax.sql.DataSource"
 maxActive="2000"  maxIdle="50000000" maxWait="10000"
-username="root" password="root"
+username="root" password="123456"
 driverClassName="com.mysql.cj.jdbc.Driver"
 url="jdbc:mysql://localhost:3306/mydb?user=rootuseSSL=false&amp;serverTimezone=UTC"/>
 

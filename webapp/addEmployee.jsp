@@ -62,7 +62,9 @@
 				</tbody>
 			</table>
 		</form>
-
+<p>
+			<a href="EmployeeList">Back to List</a>
+		</p>
 
 	</div>
 	<jsp:include page="footer.html" />

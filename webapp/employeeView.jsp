@@ -10,37 +10,44 @@
 </head>
 <body>
 	<jsp:include page="header.html" />
-	
 
-<table>
-<tr>
-<th>ID</th>
-<th>Name</th>
-<th>Active</th>
-<th>Email</th>
-<th>Phone</th>
-<th>Country</th>
-</tr>
-
-
-
-
-<c:forEach var="tempEmployee" items="${EMPLOYEES_LIST}">
-<tr>
-			<td>${tempEmployee.id}</td>
-			<td>${tempEmployee.name}</td>
-			<td>${tempEmployee.active}</td>
-			<td>${tempEmployee.email}</td>
-			<td>${tempEmployee.phone}</td>
-			<td>${tempEmployee.country}</td>
-						
-			
-			
-			
+	<table>
+		<tr>
+			<th>ID</th>
+			<th>Name</th>
+			<th>Active</th>
+			<th>Email</th>
+			<th>Phone</th>
+			<th>Country</th>
+			<th><a href="addEmployee.jsp">Add</a></th>
 		</tr>
-</c:forEach>
 
-</table>
+
+
+
+		<c:forEach var="tempEmployee" items="${EMPLOYEES_LIST}">
+		<!-- set up a link for each student -->
+					<c:url var="tempLink" value="EmployeeList">
+						<c:param name="command" value="LOAD" />
+						<c:param name="ID" value="${tempEmployee.id}" />
+					</c:url>
+					
+			<tr>
+				<td>${tempEmployee.id}</td>
+				<td>${tempEmployee.name}</td>
+				<td>${tempEmployee.active}</td>
+				<td>${tempEmployee.email}</td>
+				<td>${tempEmployee.phone}</td>
+				<td>${tempEmployee.country}</td>
+				<td><a href="${tempLink}">Update</a> </td>
+				
+
+
+
+			</tr>
+		</c:forEach>
+
+	</table>
 
 	<jsp:include page="footer.html" />
 </body>
