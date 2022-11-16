@@ -67,7 +67,9 @@ public class employeeList extends HttpServlet {
 			case "UPDATE":
 				updateEmployee(request, response);
 				break;
-
+			case "DELETE":
+				deleteEmployee(request, response);
+				break;
 			default:
 				listEmployees(request, response);
 			}
@@ -76,6 +78,18 @@ public class employeeList extends HttpServlet {
 			throw new ServletException(exc);
 		}
 
+	}
+
+	private void deleteEmployee(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+		// read student id from form data
+		int theEmployeeId = Integer.parseInt(request.getParameter("ID"));
+
+		// delete student from database
+		Dbutil.deleteEmployee(theEmployeeId);
+
+		// send them back to "list students" page
+		listEmployees(request, response);
 	}
 
 	private void addEmployee(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -138,10 +152,10 @@ public class employeeList extends HttpServlet {
 		String country = request.getParameter("Country");
 
 		// create a new student object
-		Employee theEmployee = new Employee(id, name, active, email,phone,country);
+		Employee theEmployee = new Employee(id, name, active, email, phone, country);
 
 		// perform update on database
-		dbUtil.updateEmployee(theEmployee);
+		Dbutil.updateEmployee(theEmployee);
 
 		// send them back to the "list students" page
 		listEmployees(request, response);

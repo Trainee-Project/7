@@ -10,7 +10,7 @@ import java.util.List;
 import javax.sql.DataSource;
 
 public class dbUtil {
-	private static  DataSource dataSource;
+	private static DataSource dataSource;
 
 	public dbUtil(DataSource theDataSource) {
 		dataSource = theDataSource;
@@ -89,7 +89,7 @@ public class dbUtil {
 		}
 	}
 
-	public  void addEmployee(Employee theEmployee) throws Exception {
+	public void addEmployee(Employee theEmployee) throws Exception {
 
 		Connection myConn = null;
 		PreparedStatement myStmt = null;
@@ -99,9 +99,7 @@ public class dbUtil {
 			myConn = dataSource.getConnection();
 
 			// create sql for insert
-			String sql = "insert into employee " 
-			+"(ID,Name,Active,Email,Phone,Country)"
-			+"values (?, ?, ?,?,?,?)";
+			String sql = "insert into employee " + "(ID,Name,Active,Email,Phone,Country)" + "values (?, ?, ?,?,?,?)";
 
 			myStmt = myConn.prepareStatement(sql);
 
@@ -120,7 +118,7 @@ public class dbUtil {
 		}
 	}
 
-	public  void addProject(Project theProject) throws Exception {
+	public void addProject(Project theProject) throws Exception {
 
 		Connection myConn = null;
 		PreparedStatement myStmt = null;
@@ -149,7 +147,7 @@ public class dbUtil {
 		}
 	}
 
-	public   Employee getEmployee(int theEmployeeId) throws Exception {
+	public Employee getEmployee(int theEmployeeId) throws Exception {
 
 		Employee theEmployee = null;
 
@@ -198,14 +196,14 @@ public class dbUtil {
 		}
 	}
 
-	public static void updateEmployee(Employee theEmployee) throws Exception {
+	public void updateEmployee(Employee theEmployee) throws Exception {
 
 		Connection myConn = null;
 		PreparedStatement myStmt = null;
 
 		try {
 			// get db connection
-			myConn =  dataSource.getConnection();
+			myConn = dataSource.getConnection();
 
 			// create SQL update statement
 			String sql = "update employee " + "set name=?, active=?, email=?,phone=?,country=? " + "where ID=?";
@@ -214,7 +212,7 @@ public class dbUtil {
 			myStmt = myConn.prepareStatement(sql);
 
 			// set params
-			
+
 			myStmt.setString(1, theEmployee.getName());
 			myStmt.setInt(2, theEmployee.getActive());
 			myStmt.setString(3, theEmployee.getEmail());
@@ -230,6 +228,34 @@ public class dbUtil {
 		}
 	}
 
+	public void deleteEmployee(int theEmployeeId) throws Exception {
+
+		Connection myConn = null;
+		PreparedStatement myStmt = null;
+		ResultSet myRs = null;
+
+		try {
+			int id1 = theEmployeeId;
+
+			// get connection to database
+			myConn = dataSource.getConnection();
+
+			// create sql to get selected student
+			String sql = "delete  from employee where ID=?";
+			// prepare statement
+			myStmt = myConn.prepareStatement(sql);
+
+			// set params
+			myStmt.setInt(1, id1);
+
+			// execute sql statement
+			myStmt.execute();
+
+		} finally {
+			// clean up JDBC objects
+			close(myConn, myStmt, myRs);
+		}
+	}
 	/*
 	 * public Student getStudent(String theStudentId) throws Exception {
 	 * 
