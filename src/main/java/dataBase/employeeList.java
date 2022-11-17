@@ -38,6 +38,7 @@ public class employeeList extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		try {
@@ -78,18 +79,6 @@ public class employeeList extends HttpServlet {
 			throw new ServletException(exc);
 		}
 
-	}
-
-	private void deleteEmployee(HttpServletRequest request, HttpServletResponse response) throws Exception {
-
-		// read student id from form data
-		int theEmployeeId = Integer.parseInt(request.getParameter("ID"));
-
-		// delete student from database
-		Dbutil.deleteEmployee(theEmployeeId);
-
-		// send them back to "list students" page
-		listEmployees(request, response);
 	}
 
 	private void addEmployee(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -158,6 +147,18 @@ public class employeeList extends HttpServlet {
 		Dbutil.updateEmployee(theEmployee);
 
 		// send them back to the "list students" page
+		listEmployees(request, response);
+	}
+
+	private void deleteEmployee(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+		// read student id from form data
+		int theEmployeeId = Integer.parseInt(request.getParameter("ID"));
+
+		// delete student from database
+		Dbutil.deleteEmployee(theEmployeeId);
+
+		// send them back to "list students" page
 		listEmployees(request, response);
 	}
 }

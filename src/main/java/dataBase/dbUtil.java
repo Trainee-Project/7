@@ -34,12 +34,13 @@ public class dbUtil {
 			// process result set
 			while (myRs.next()) {
 				// retrive data from set row
-				int id = myRs.getInt("ID");
+				int id = myRs.getInt("PersonID");
 				String name = myRs.getString("Name");
 				int active = myRs.getInt("Active");
 				String email = myRs.getString("Email");
 				int phone = myRs.getInt("Phone");
 				String country = myRs.getString("country");
+
 				// create new employee object
 				Employee tempEmployee = new Employee(id, name, active, email, phone, country);
 				// add to aray list
@@ -71,7 +72,7 @@ public class dbUtil {
 			// process result set
 			while (myRs.next()) {
 				// retrive data from set row
-				int projectId = myRs.getInt("PID");
+				int projectId = myRs.getInt("Project_ID");
 				String projectName = myRs.getString("Project_Name");
 				String projectStatus = myRs.getString("Project_Status");
 				String startDate = myRs.getString("Start_Date");
@@ -99,7 +100,8 @@ public class dbUtil {
 			myConn = dataSource.getConnection();
 
 			// create sql for insert
-			String sql = "insert into employee " + "(ID,Name,Active,Email,Phone,Country)" + "values (?, ?, ?,?,?,?)";
+			String sql = "insert into employee " + "(PersonID,Name,Active,Email,Phone,Country)"
+					+ "values (?, ?, ?,?,?,?)";
 
 			myStmt = myConn.prepareStatement(sql);
 
@@ -148,9 +150,7 @@ public class dbUtil {
 	}
 
 	public Employee getEmployee(int theEmployeeId) throws Exception {
-
 		Employee theEmployee = null;
-
 		Connection myConn = null;
 		PreparedStatement myStmt = null;
 		ResultSet myRs = null;
@@ -164,7 +164,7 @@ public class dbUtil {
 			myConn = dataSource.getConnection();
 
 			// create sql to get selected student
-			String sql = "select * from employee where ID=?";
+			String sql = "select * from employee where PersonID=?";
 
 			// create prepared statement
 			myStmt = myConn.prepareStatement(sql);
@@ -177,7 +177,7 @@ public class dbUtil {
 
 			// retrieve data from result set row
 			if (myRs.next()) {
-				int id = myRs.getInt("ID");
+				int id = myRs.getInt("PersonID");
 				String name = myRs.getString("Name");
 				int active = myRs.getInt("Active");
 				String email = myRs.getString("Email");
@@ -206,7 +206,7 @@ public class dbUtil {
 			myConn = dataSource.getConnection();
 
 			// create SQL update statement
-			String sql = "update employee " + "set name=?, active=?, email=?,phone=?,country=? " + "where ID=?";
+			String sql = "update employee " + "set name=?, active=?, email=?,phone=?,country=? " + "where PersonID=?";
 
 			// prepare statement
 			myStmt = myConn.prepareStatement(sql);
@@ -241,7 +241,7 @@ public class dbUtil {
 			myConn = dataSource.getConnection();
 
 			// create sql to get selected student
-			String sql = "delete  from employee where ID=?";
+			String sql = "delete  from employee where PersonID=?";
 			// prepare statement
 			myStmt = myConn.prepareStatement(sql);
 
@@ -256,59 +256,113 @@ public class dbUtil {
 			close(myConn, myStmt, myRs);
 		}
 	}
-	/*
-	 * public Student getStudent(String theStudentId) throws Exception {
-	 * 
-	 * Student theStudent = null;
-	 * 
-	 * Connection myConn = null; PreparedStatement myStmt = null; ResultSet myRs =
-	 * null; int studentId;
-	 * 
-	 * try { // convert student id to int studentId =
-	 * Integer.parseInt(theStudentId);
-	 * 
-	 * // get connection to database myConn = dataSource.getConnection();
-	 * 
-	 * // create sql to get selected student String sql =
-	 * "select * from student where id=?";
-	 * 
-	 * // create prepared statement myStmt = myConn.prepareStatement(sql);
-	 * 
-	 * // set params myStmt.setInt(1, studentId);
-	 * 
-	 * // execute statement myRs = myStmt.executeQuery();
-	 * 
-	 * // retrieve data from result set row if (myRs.next()) { String firstName =
-	 * myRs.getString("first_name"); String lastName = myRs.getString("last_name");
-	 * String email = myRs.getString("email");
-	 * 
-	 * // use the studentId during construction theStudent = new Student(studentId,
-	 * firstName, lastName, email); } else { throw new
-	 * Exception("Could not find student id: " + studentId); }
-	 * 
-	 * return theStudent; } finally { // clean up JDBC objects close(myConn, myStmt,
-	 * myRs); } }
-	 * 
-	 * public void updateStudent(Student theStudent) throws Exception {
-	 * 
-	 * Connection myConn = null; PreparedStatement myStmt = null;
-	 * 
-	 * try { // get db connection myConn = dataSource.getConnection();
-	 * 
-	 * // create SQL update statement String sql = "update student " +
-	 * "set first_name=?, last_name=?, email=? " + "where id=?";
-	 * 
-	 * // prepare statement myStmt = myConn.prepareStatement(sql);
-	 * 
-	 * // set params myStmt.setString(1, theStudent.getFirstName());
-	 * myStmt.setString(2, theStudent.getLastName()); myStmt.setString(3,
-	 * theStudent.getEmail()); myStmt.setInt(4, theStudent.getId());
-	 * 
-	 * // execute SQL statement myStmt.execute(); } finally { // clean up JDBC
-	 * objects close(myConn, myStmt, null); } }
-	 * 
-	 * }
-	 */
+
+	public Project getProject(int theProjectId) throws Exception {
+		Project theProject = null;
+		Connection myConn = null;
+		PreparedStatement myStmt = null;
+		ResultSet myRs = null;
+		int id1;
+
+		try {
+			// convert student id to int
+			id1 = theProjectId;
+
+			// get connection to database
+			myConn = dataSource.getConnection();
+
+			// create sql to get selected student
+			String sql = "select * from project where Project_ID=?";
+
+			// create prepared statement
+			myStmt = myConn.prepareStatement(sql);
+
+			// set params
+			myStmt.setInt(1, id1);
+
+			// execute statement
+			myRs = myStmt.executeQuery();
+
+			// retrieve data from result set row
+			if (myRs.next()) {
+				int projectId = myRs.getInt("Project_ID");
+				String projectName = myRs.getString("Project_Name");
+				String projectStatus = myRs.getString("Project_Status");
+				String startDate = myRs.getString("Start_Date");
+				String endDate = myRs.getString("End_Date");
+				// use the studentId during construction
+				theProject = new Project(projectId, projectName, projectStatus, startDate, endDate);
+
+			} else {
+				throw new Exception("Could not find Employee id: " + id1);
+			}
+
+			return theProject;
+		} finally {
+			// clean up JDBC objects
+			close(myConn, myStmt, myRs);
+		}
+	}
+
+	public void updateProject(Project theProject) throws Exception {
+
+		Connection myConn = null;
+		PreparedStatement myStmt = null;
+
+		try {
+			// get db connection
+			myConn = dataSource.getConnection();
+
+			// create SQL update statement
+			String sql = "update project " + "set Project_Name=?, Project_Status=?, Start_Date=?, End_Date=? "
+					+ "where Project_ID =?";
+
+			// prepare statement
+			myStmt = myConn.prepareStatement(sql);
+
+			// set params
+
+			myStmt.setString(1, theProject.getProjectName());
+			myStmt.setString(2, theProject.getProjectStatus());
+			myStmt.setString(3, theProject.getStartDate());
+			myStmt.setString(4, theProject.getEndDate());
+			myStmt.setInt(5, theProject.getProjectId());
+			// execute SQL statement
+			myStmt.execute();
+		} finally {
+			// clean up JDBC objects
+			close(myConn, myStmt, null);
+		}
+	}
+
+	public void deleteProject(int theProjectId) throws Exception {
+
+		Connection myConn = null;
+		PreparedStatement myStmt = null;
+		ResultSet myRs = null;
+
+		try {
+			int id1 = theProjectId;
+
+			// get connection to database
+			myConn = dataSource.getConnection();
+
+			// create sql to get selected student
+			String sql = "delete  from project where Project_ID=?";
+			// prepare statement
+			myStmt = myConn.prepareStatement(sql);
+
+			// set params
+			myStmt.setInt(1, id1);
+
+			// execute sql statement
+			myStmt.execute();
+
+		} finally {
+			// clean up JDBC objects
+			close(myConn, myStmt, myRs);
+		}
+	}
 
 	public static void close(Connection myConn, Statement myStmt, ResultSet myRs) {
 		try {

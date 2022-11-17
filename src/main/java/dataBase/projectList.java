@@ -38,9 +38,9 @@ public class projectList extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
 		try {
 			// read the "command" parameter
 			String theCommand = request.getParameter("command");
@@ -61,6 +61,18 @@ public class projectList extends HttpServlet {
 				addProject(request, response);
 				break;
 
+			case "LOAD":
+				loadProject(request, response);
+				break;
+
+			case "UPDATE":
+				updateProject(request, response);
+				break;
+			case "DELETE":
+				deleteProject(request, response);
+				break;
+			default:
+				listProject(request, response);
 			}
 
 		} catch (Exception exc) {
@@ -81,7 +93,6 @@ public class projectList extends HttpServlet {
 		// create a new student object
 		Project theProject = new Project(projectId, projectName, projectStatus, startDate, endDate);
 
-		
 		// add the student to the database
 		Dbutil.addProject(theProject);
 
@@ -101,5 +112,52 @@ public class projectList extends HttpServlet {
 		RequestDispatcher dispatcher = request.getRequestDispatcher("projectView.jsp");
 		dispatcher.forward(request, response);
 
+	}
+
+	private void loadProject(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+		// read student id from form data
+		int theProjectId = Integer.parseInt(request.getParameter("ID"));
+
+		// get student from database (db util)
+		Project theProject = Dbutil.getProject(theProjectId);
+
+		// place student in the request attribute
+		request.setAttribute("THE_PROJECT", theProject);
+
+		// send to jsp page: update-student-form.jsp
+		RequestDispatcher dispatcher = request.getRequestDispatcher("updateProject.jsp");
+		dispatcher.forward(request, response);
+
+	}
+
+	private void updateProject(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+		// read student info from form data
+		int projectId = Integer.parseInt(request.getParameter("Project_ID"));
+		String projectName = request.getParameter("Project_Name");
+		String projectStatus = request.getParameter("Project_Status");
+		String startDate = request.getParameter("Start_Date");
+		String endDate = request.getParameter("End_Date");
+		// create a new student object
+		Project theProject = new Project(projectId, projectName, projectStatus, startDate, endDate);
+
+		// perform update on database
+		Dbutil.updateProject(theProject);
+
+		// send them back to the "list students" page
+		listProject(request, response);
+	}
+
+	private void deleteProject(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+// read student id from form data
+		int theProjectId = Integer.parseInt(request.getParameter("ID"));
+
+// delete student from database
+		Dbutil.deleteProject(theProjectId);
+
+// send them back to "list students" page
+		listProject(request, response);
 	}
 }

@@ -6,7 +6,6 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/aaron/Documents/apache-tomcat-9.0.68/lib/servlet-api.jar"/>
 	<classpathentry kind="lib" path="webapp/WEB-INF/lib/javax.servlet.jsp.jstl-api-1.2.1.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
@@ -15,5 +14,7 @@
 			<attribute name="owner.project.facets" value="jst.web"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="/Users/m_2161882/Downloads/apache-tomcat-9.0.68/lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="/Users/m_2161882/Downloads/solution-code-student-tracker-delete-student/WebContent/WEB-INF/lib/mysql-connector-java-8.0.19.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
