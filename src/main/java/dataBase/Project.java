@@ -15,6 +15,13 @@ public class Project {
 		this.startDate = startDate;
 		this.endDate = endDate;
 	}
+	public Project( String projectName, String projectStatus, String startDate, String endDate) {
+		super();
+		this.projectName = projectName;
+		this.projectStatus = projectStatus;
+		this.startDate = startDate;
+		this.endDate = endDate;
+	}
 
 	public int getProjectId() {
 		return projectId;

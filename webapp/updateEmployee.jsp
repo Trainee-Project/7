@@ -16,8 +16,8 @@
 		<table>
 			<tbody>
 				<tr>
-					<td><label>ID</label></td>
-					<td><input type="text" name="ID" value="${THE_EMPLOYEE.id}" /></td>
+					
+					<td><input type="hidden" name="ID" value="${THE_EMPLOYEE.id}" /></td>
 				</tr>
 
 				<tr>

@@ -100,18 +100,18 @@ public class dbUtil {
 			myConn = dataSource.getConnection();
 
 			// create sql for insert
-			String sql = "insert into employee " + "(PersonID,Name,Active,Email,Phone,Country)"
-					+ "values (?, ?, ?,?,?,?)";
+			String sql = "insert into employee " + "(Name,Active,Email,Phone,Country)"
+					+ "values (?, ?, ?,?,?)";
 
 			myStmt = myConn.prepareStatement(sql);
 
 			// set the param values for the employee
-			myStmt.setInt(1, theEmployee.getId());
-			myStmt.setString(2, theEmployee.getName());
-			myStmt.setInt(3, theEmployee.getActive());
-			myStmt.setString(4, theEmployee.getEmail());
-			myStmt.setInt(5, theEmployee.getPhone());
-			myStmt.setString(6, theEmployee.getCountry());
+		
+			myStmt.setString(1, theEmployee.getName());
+			myStmt.setInt(2, theEmployee.getActive());
+			myStmt.setString(3, theEmployee.getEmail());
+			myStmt.setInt(4, theEmployee.getPhone());
+			myStmt.setString(5, theEmployee.getCountry());
 			// execute sql insert
 			myStmt.execute();
 		} finally {

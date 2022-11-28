@@ -23,12 +23,7 @@
 
 				<tbody>
 
-					<tr>
-
-						<td><label>ID:</label></td>
-						<td><input type="text" name="ID" /></td>
-					</tr>
-
+				
 					<tr>
 						<td><label>Name:</label></td>
 						<td><input type="text" name="Name" /></td>

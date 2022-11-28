@@ -75,13 +75,13 @@ public class employeeList extends HttpServlet {
 	}
 
 	private void addEmployee(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		int id = Integer.parseInt(request.getParameter("ID"));
+		
 		String name = request.getParameter("Name");
 		int active = Integer.parseInt(request.getParameter("Active"));
 		String email = request.getParameter("Email");
 		int phone = Integer.parseInt(request.getParameter("Phone"));
 		String country = request.getParameter("Country");
-		Employee theEmployee = new Employee(id, name, active, email, phone, country);
+		Employee theEmployee = new Employee(name, active, email, phone, country);
 
 		Dbutil.addEmployee(theEmployee);
 
