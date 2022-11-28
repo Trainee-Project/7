@@ -9,7 +9,7 @@ public class Employee {
 	private String country;
 
 	public Employee(int id, String name, int active, String email, int phone, String country) {
-		super();
+	
 		this.id = id;
 		this.name = name;
 		this.active = active;
@@ -17,7 +17,15 @@ public class Employee {
 		this.phone = phone;
 		this.country = country;
 	}
-
+	public Employee( String name, int active, String email, int phone, String country) {
+		super();
+	
+		this.name = name;
+		this.active = active;
+		this.email = email;
+		this.phone = phone;
+		this.country = country;
+	}
 	public int getId() {
 		return id;
 	}

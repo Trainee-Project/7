@@ -13,7 +13,7 @@
 
 	<jsp:include page="header.html" />
 	<div id="container">
-		<h3>Add Student</h3>
+		<h3>Add Employee</h3>
 
 		<form action="EmployeeList" method="GET">
 

@@ -2,7 +2,7 @@
 <html>
 
 <head>
-<title>Update Student</title>
+<title>Update</title>
 
 </head>
 

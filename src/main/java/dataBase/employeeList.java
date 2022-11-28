@@ -22,7 +22,6 @@ public class employeeList extends HttpServlet {
 
 	@Override
 	public void init() throws ServletException {
-		// create dbutil and pass in conn pool/datasource
 		try {
 			Dbutil = new dbUtil(dataSource);
 
@@ -34,23 +33,17 @@ public class employeeList extends HttpServlet {
 		super.init();
 	}
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
+
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		try {
-			// read the "command" parameter
 			String theCommand = request.getParameter("command");
 
-			// if the command is missing, then default to listing students
 			if (theCommand == null) {
 				theCommand = "LIST";
 			}
 
-			// route to the appropriate method
 			switch (theCommand) {
 
 			case "LIST":
@@ -82,32 +75,26 @@ public class employeeList extends HttpServlet {
 	}
 
 	private void addEmployee(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		// read student info from form data
 		int id = Integer.parseInt(request.getParameter("ID"));
 		String name = request.getParameter("Name");
 		int active = Integer.parseInt(request.getParameter("Active"));
 		String email = request.getParameter("Email");
 		int phone = Integer.parseInt(request.getParameter("Phone"));
 		String country = request.getParameter("Country");
-		// create a new student object
 		Employee theEmployee = new Employee(id, name, active, email, phone, country);
 
-		// add the student to the database
 		Dbutil.addEmployee(theEmployee);
 
-		// send back to main page (the student list)
 		listEmployees(request, response);
 	}
 
 	private void listEmployees(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
-		// get expmloyyes from dbutil
+	
 		List<Employee> Employees = Dbutil.getEmployees();
-		// add employees to request
+	
 		request.setAttribute("EMPLOYEES_LIST", Employees);
-		// send to jsp (view)pw.println("<div
-		// style='margin:auto;width:900px;margin-top:100px;'>");
-
+		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("employeeView.jsp");
 		dispatcher.forward(request, response);
 
@@ -115,16 +102,12 @@ public class employeeList extends HttpServlet {
 
 	private void loadEmployee(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
-		// read student id from form data
 		int theEmployeeId = Integer.parseInt(request.getParameter("ID"));
 
-		// get student from database (db util)
 		Employee theEmployee = Dbutil.getEmployee(theEmployeeId);
 
-		// place student in the request attribute
 		request.setAttribute("THE_EMPLOYEE", theEmployee);
 
-		// send to jsp page: update-student-form.jsp
 		RequestDispatcher dispatcher = request.getRequestDispatcher("updateEmployee.jsp");
 		dispatcher.forward(request, response);
 
@@ -132,7 +115,6 @@ public class employeeList extends HttpServlet {
 
 	private void updateEmployee(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
-		// read student info from form data
 		int id = Integer.parseInt(request.getParameter("ID"));
 		String name = request.getParameter("Name");
 		int active = Integer.parseInt(request.getParameter("Active"));
@@ -140,25 +122,19 @@ public class employeeList extends HttpServlet {
 		int phone = Integer.parseInt(request.getParameter("Phone"));
 		String country = request.getParameter("Country");
 
-		// create a new student object
 		Employee theEmployee = new Employee(id, name, active, email, phone, country);
 
-		// perform update on database
 		Dbutil.updateEmployee(theEmployee);
 
-		// send them back to the "list students" page
 		listEmployees(request, response);
 	}
 
 	private void deleteEmployee(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
-		// read student id from form data
 		int theEmployeeId = Integer.parseInt(request.getParameter("ID"));
 
-		// delete student from database
 		Dbutil.deleteEmployee(theEmployeeId);
 
-		// send them back to "list students" page
 		listEmployees(request, response);
 	}
 }

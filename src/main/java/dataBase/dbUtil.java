@@ -134,7 +134,7 @@ public class dbUtil {
 
 			myStmt = myConn.prepareStatement(sql);
 
-			// set the param values for the student
+			// set the values
 			myStmt.setInt(1, theProject.getProjectId());
 			myStmt.setString(2, theProject.getProjectName());
 			myStmt.setString(3, theProject.getProjectStatus());
@@ -157,13 +157,13 @@ public class dbUtil {
 		int id1;
 
 		try {
-			// convert student id to int
+			
 			id1 = theEmployeeId;
 
 			// get connection to database
 			myConn = dataSource.getConnection();
 
-			// create sql to get selected student
+			// create sql to get 
 			String sql = "select * from employee where PersonID=?";
 
 			// create prepared statement
@@ -240,7 +240,7 @@ public class dbUtil {
 			// get connection to database
 			myConn = dataSource.getConnection();
 
-			// create sql to get selected student
+			// create sql to get 
 			String sql = "delete  from employee where PersonID=?";
 			// prepare statement
 			myStmt = myConn.prepareStatement(sql);
@@ -271,7 +271,7 @@ public class dbUtil {
 			// get connection to database
 			myConn = dataSource.getConnection();
 
-			// create sql to get selected student
+			// create sql to get 
 			String sql = "select * from project where Project_ID=?";
 
 			// create prepared statement
@@ -347,7 +347,7 @@ public class dbUtil {
 			// get connection to database
 			myConn = dataSource.getConnection();
 
-			// create sql to get selected student
+			// create sql to get 
 			String sql = "delete  from project where Project_ID=?";
 			// prepare statement
 			myStmt = myConn.prepareStatement(sql);
