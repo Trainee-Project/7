@@ -130,16 +130,16 @@ public class dbUtil {
 			myConn = dataSource.getConnection();
 
 			// create sql for insert
-			String sql = "insert into project " + "values (?, ?, ?,?,?)";
+			String sql = "insert into project " +"(Project_Name, Project_Status, Start_Date, End_Date)" + "values (?, ?, ?,?)";
 
 			myStmt = myConn.prepareStatement(sql);
 
 			// set the values
-			myStmt.setInt(1, theProject.getProjectId());
-			myStmt.setString(2, theProject.getProjectName());
-			myStmt.setString(3, theProject.getProjectStatus());
-			myStmt.setString(4, theProject.getStartDate());
-			myStmt.setString(5, theProject.getEndDate());
+			
+			myStmt.setString(1, theProject.getProjectName());
+			myStmt.setString(2, theProject.getProjectStatus());
+			myStmt.setString(3, theProject.getStartDate());
+			myStmt.setString(4, theProject.getEndDate());
 
 			// execute sql insert
 			myStmt.execute();

@@ -23,11 +23,7 @@
 			
 				<tbody>
 				
-					<tr>
-						<td><label>Project ID:</label></td>
-						<td><input type="text" name="Project ID" /></td>
-					</tr>
-
+				
 					<tr>
 						<td><label>Project Name:</label></td>
 						<td><input type="text" name="Project Name" /></td>

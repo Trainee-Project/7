@@ -76,13 +76,13 @@ public class projectList extends HttpServlet {
 
 	private void addProject(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
-		int projectId = Integer.parseInt(request.getParameter("Project ID"));
+		
 		String projectName = request.getParameter("Project Name");
 		String projectStatus = request.getParameter("Project Status");
 		String startDate = request.getParameter("Start Date");
 		String endDate = request.getParameter("End Date");
 
-		Project theProject = new Project(projectId, projectName, projectStatus, startDate, endDate);
+		Project theProject = new Project(projectName, projectStatus, startDate, endDate);
 
 		Dbutil.addProject(theProject);
 

@@ -18,29 +18,29 @@
 		<table>
 			<tbody>
 				<tr>
-					<td><label>ID</label></td>
-					<td><input type="text" name="Project_ID"
-						value="${THE_PROJECT.projectId}" /></td>
+				
+					<td><input type="hidden" name="Project_ID"
+						value="${THE_PROJECT.projectId}" readonly /></td>
 				</tr>
 
 				<tr>
-					<td><label>Name</label></td>
+					<td><label>Project Name</label></td>
 					<td><input type="text" name="Project_Name"
 						value="${THE_PROJECT.projectName}" /></td>
 				</tr>
 
 				<tr>
-					<td><label>Active</label></td>
+					<td><label>Project Status</label></td>
 					<td><input type="text" name="Project_Status"
 						value="${THE_PROJECT.projectStatus}" /></td>
 				</tr>
 				<tr>
-					<td><label>Email</label></td>
+					<td><label>Start Date</label></td>
 					<td><input type="text" name="Start_Date"
 						value="${THE_PROJECT.startDate}" /></td>
 				</tr>
 				<tr>
-					<td><label>Phone</label></td>
+					<td><label>End Date</label></td>
 					<td><input type="text" name="End_Date"
 						value="${THE_PROJECT.endDate}" /></td>
 				</tr>
