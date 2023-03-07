@@ -1,6 +1,26 @@
 <%@ page import="javax.servlet.*,java.text.*, dataBase.*,java.util.*  "%>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+      <%
+         Cookie cookie = null;
+         Cookie[] cookies = null;
+         
+         // Get an array of Cookies associated with the this domain
+         cookies = request.getCookies();
+         
+         
+            
+            for (int i = 0; i < cookies.length; i++) {
+            	if (i==0) continue;
+               cookie = cookies[i];
+               
+               
+               
+               out.print("Welcome : " + cookie.getName( ) + ",  ");
+            }
+            
+           
+      %>
 
 <html>
 <head>

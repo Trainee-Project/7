@@ -7,6 +7,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.Cookie;
 import javax.sql.DataSource;
 
 public class dbUtil {
@@ -265,7 +266,7 @@ public class dbUtil {
 		int id1;
 
 		try {
-			// convert student id to int
+			
 			id1 = theProjectId;
 
 			// get connection to database
@@ -360,6 +361,44 @@ public class dbUtil {
 
 		} finally {
 			// clean up JDBC objects
+			close(myConn, myStmt, myRs);
+		}
+	}
+
+	public user getUser(String username,String password) throws Exception {
+		user theUser = null;
+		Connection myConn = null;
+		PreparedStatement myStmt = null;
+		ResultSet myRs = null;
+		
+		try {
+		
+			// get connection to database
+			myConn = dataSource.getConnection();
+
+			// create sql to get 
+			String sql = "select * from user where username=? and password=?";
+
+			// create prepared statement
+			myStmt = myConn.prepareStatement(sql);
+			myStmt.setString(1,username);
+			myStmt.setString(2,password);
+
+			// set params
+			
+
+			// execute statement
+			myRs = myStmt.executeQuery();
+			if (myRs.next()) {
+			// retrieve data from result set row
+			} else {
+				throw new Exception("Could not find user");
+			}
+			return theUser;
+		} finally {
+			// clean up JDBC objects
+			
+
 			close(myConn, myStmt, myRs);
 		}
 	}

@@ -1,30 +1,26 @@
 package dataBase;
 
 public class user {
-	private int id;
+
 	private String username;
 	private String password;
 
-	public user(int id, String username, String password) {
-
-		this.id = id;
-		this.username = username;
-		this.password = password;
-	}
-
 	public user(String username, String password) {
 
+
 		this.username = username;
 		this.password = password;
 	}
 
-	public int getId() {
-		return id;
+	
+	public user(String username) {
+
+
+		this.username = username;
+
 	}
 
-	public void setId(int id) {
-		this.id = id;
-	}
+	
 
 	public String getUsername() {
 		return username;
